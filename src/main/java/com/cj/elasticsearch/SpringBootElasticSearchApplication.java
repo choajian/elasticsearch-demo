@@ -1,12 +1,12 @@
-package com.yi.elasticsearch;
+package com.cj.elasticsearch;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * elasticsearch-5.5.2操作
- * @author YI
- * @date 2018-4-20 18:06:45
+ * elasticsearch-6.3.2操作
+ * @author 晁建
+ * @date 2019-05-26
  */
 @SpringBootApplication
 public class SpringBootElasticSearchApplication {

@@ -1,6 +1,6 @@
-package com.yi.elasticsearch.repository;
+package com.cj.elasticsearch.repository;
 
-import com.yi.elasticsearch.model.Article;
+import com.cj.elasticsearch.model.Article;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
@@ -9,8 +9,8 @@ import java.util.List;
 
 /**
  * 操作模板
- * @author YI
- * @date 2018-8-13 10:49:16
+ * @author 晁建
+ * @date 2019-05-26
  */
 public interface ArticleSearchRepository extends ElasticsearchRepository<Article, Long> {
 

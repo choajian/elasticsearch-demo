@@ -1,15 +1,15 @@
-package com.yi.elasticsearch.service;
+package com.cj.elasticsearch.service;
 
-import com.yi.elasticsearch.model.Article;
+import com.cj.elasticsearch.model.Article;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.core.query.SearchQuery;
 
 import java.util.List;
 
 /**
- * elasticsearch操作文章
- * @author YI
- * @date 2018-8-13 10:38:49
+ * elasticsearch　操作文章
+ * @author 晁建
+ * @date 2019-05-26
  */
 public interface ArticleService {
 

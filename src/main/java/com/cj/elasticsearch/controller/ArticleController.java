@@ -1,7 +1,7 @@
-package com.yi.elasticsearch.controller;
+package com.cj.elasticsearch.controller;
 
-import com.yi.elasticsearch.model.Article;
-import com.yi.elasticsearch.service.ArticleService;
+import com.cj.elasticsearch.model.Article;
+import com.cj.elasticsearch.service.ArticleService;
 import org.elasticsearch.common.lucene.search.function.FunctionScoreQuery;
 import org.elasticsearch.index.query.BoolQueryBuilder;
 import org.elasticsearch.index.query.MatchQueryBuilder;
@@ -24,8 +24,8 @@ import java.util.List;
 
 /**
  * 文章操作
- * @author YI
- * @date 2018-8-13 11:06:05
+ * @author 晁建
+ * @date 2019-05-26
  */
 @RestController
 @RequestMapping("/elasticsearch")

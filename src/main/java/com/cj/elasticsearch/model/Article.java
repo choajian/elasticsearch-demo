@@ -1,4 +1,4 @@
-package com.yi.elasticsearch.model;
+package com.cj.elasticsearch.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.*;
@@ -8,15 +8,15 @@ import java.util.Date;
 
 /**
  * 文章实体
- * @author YI
- * @date 2018-8-13 10:49:34
+ * @author 晁建
+ * @date 2019-05-26
  */
 @Document(indexName="article_index",type="article",shards=5,replicas=1,indexStoreType="fs",refreshInterval="-1")
 public class Article implements Serializable {
     private static final long serialVersionUID = 551589397625941750L;
 
     @Id
-    private Long id;
+    private String id;
     /**标题*/
     private String title;
     /**摘要*/
@@ -31,7 +31,7 @@ public class Article implements Serializable {
     public Article() {
     }
 
-    public Article(Long id, String title, String abstracts, String content, Date postTime, Long clickCount) {
+    public Article(Long String, String title, String abstracts, String content, Date postTime, Long clickCount) {
         this.id = id;
         this.title = title;
         this.abstracts = abstracts;
@@ -40,11 +40,11 @@ public class Article implements Serializable {
         this.clickCount = clickCount;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
