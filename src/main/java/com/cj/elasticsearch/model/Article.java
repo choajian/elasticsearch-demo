@@ -25,19 +25,23 @@ public class Article implements Serializable {
     private String content;
     /**发表时间*/
     private Date postTime;
+
     /**点击率*/
     private Long clickCount;
+
+    private String createdate;
 
     public Article() {
     }
 
-    public Article(Long String, String title, String abstracts, String content, Date postTime, Long clickCount) {
+    public Article(Long String, String title, String abstracts, String content, Date postTime, Long clickCount,String createDate) {
         this.id = id;
         this.title = title;
         this.abstracts = abstracts;
         this.content = content;
         this.postTime = postTime;
         this.clickCount = clickCount;
+        this.createdate = createdate;
     }
 
     public String getId() {
@@ -88,6 +92,13 @@ public class Article implements Serializable {
         this.clickCount = clickCount;
     }
 
+    public String getCreatedate() {
+        return createdate;
+    }
+
+    public void setCreatedate(String createdate) {
+        this.createdate = createdate;
+    }
 
     @Override
     public String toString() {

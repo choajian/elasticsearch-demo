@@ -19,7 +19,7 @@ import static org.springframework.data.mongodb.core.query.Query.query;
  * @date 2018-05-26
  */
 @Repository
-public class ArticleDao {
+public class MongodbArticleDao {
     @Autowired
     private MongoTemplate mongoTemplate;
 

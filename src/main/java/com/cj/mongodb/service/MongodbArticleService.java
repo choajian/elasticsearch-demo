@@ -9,7 +9,7 @@ import java.util.List;
  * @author 晁建
  * @date 2018-05-26
  */
-public interface ArticleService {
+public interface MongodbArticleService {
     /**
      * 根据id查找对象
      * @param id id
@@ -40,20 +40,12 @@ public interface ArticleService {
 
     /**
      * 根据标签分页查找
-     * @param tag   标签
+     * @param createdate   标签
      * @param pageNum   当前页
      * @return
      */
-    List<Article> findArticle(String tag, int pageNum);
+    List<Article> findArticle(String createdate, int pageNum);
 
-    /**
-     * 多条件查找
-     * @param tag   标签
-     * @param good  点赞数
-     * @param bad   鄙视数
-     * @return
-     */
-    List<Article> findArticle(String tag, int good, int bad);
 
     /**
      * 更新文档

@@ -2,6 +2,7 @@ package com.cj.elasticsearch.controller;
 
 import com.cj.elasticsearch.model.Article;
 import com.cj.elasticsearch.service.ArticleService;
+import com.cj.mongodb.service.MongodbArticleService;
 import org.elasticsearch.common.lucene.search.function.FunctionScoreQuery;
 import org.elasticsearch.index.query.BoolQueryBuilder;
 import org.elasticsearch.index.query.MatchQueryBuilder;
@@ -19,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -33,6 +33,10 @@ public class ArticleController {
     @Autowired
     ArticleService articleService;
 
+    @Autowired
+    MongodbArticleService mongodbArticleService;
+
+
     /**
      * 保存数据
      */
@@ -40,15 +44,7 @@ public class ArticleController {
     public void articleSaveList(){
         List<Article> list = new ArrayList<>();
 
-        list.add(new Article(3L,"SpringMVC教程","SpringMVC","SpringMVC入门到放弃",new Date(),22L));
-        list.add(new Article(3L,"SpringMVC教程","SpringMVC","SpringMVC入门到放弃",new Date(),22L));
-        list.add(new Article(4L,"srpig教程","spring","spring入门到放弃",new Date(),20L));
-        list.add(new Article(5L,"srpigCloud教程","springCloud","springCloud入门到放弃",new Date(),20L));
-        list.add(new Article(6L,"java教程","java","java入门到放弃",new Date(),120L));
-        list.add(new Article(7L,"php教程","php","php入门到放弃",new Date(),160L));
-        list.add(new Article(8L,"mysql教程","mysql","mysql入门到放弃",new Date(),460L));
-        list.add(new Article(9L,"redis教程","redis","redis入门到放弃",new Date(),60L));
-        list.add(new Article(10L,"c教程","c","c教程入门到放弃",new Date(),600L));
+        mongodbArticleService.findArticle("2018-07-09",100);
 
         articleService.articleSaveList(list);
     }

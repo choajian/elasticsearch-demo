@@ -1,8 +1,8 @@
 package com.cj.mongodb.service.impl;
 
 import com.cj.elasticsearch.model.Article;
-import com.cj.mongodb.dao.ArticleDao;
-import com.cj.mongodb.service.ArticleService;
+import com.cj.mongodb.dao.MongodbArticleDao;
+import com.cj.mongodb.service.MongodbArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -20,9 +20,9 @@ import static org.springframework.data.mongodb.core.query.Query.query;
  * @date 2019-05-26
  */
 @Service
-public class ArticleServiceImpl implements ArticleService {
+public class MongodbArticleServiceImpl implements MongodbArticleService {
     @Autowired
-    ArticleDao ArticleDao;
+    MongodbArticleDao ArticleDao;
 
     @Override
     public Article findById(String id) {
@@ -55,8 +55,8 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public List<Article> findArticle(String tag, int pageNum) {
-        Criteria criteria = where("tag").in(tag);
+    public List<Article> findArticle(String createdate, int pageNum) {
+        Criteria criteria = where("createdate").in(createdate);
         Query query = query(criteria);
         //查询总数
         long totalCount = ArticleDao.count(query);
@@ -71,18 +71,6 @@ public class ArticleServiceImpl implements ArticleService {
 
         List<Article> Article = ArticleDao.findArticle(query, numOfPage);
 
-        return Article;
-    }
-
-    @Override
-    public List<Article> findArticle(String tag, int good, int bad) {
-        Criteria criteria1 = where("tag").in(tag);
-        Criteria criteria2 = where("bad").gt(bad);
-        Criteria criteria3 = where("good").lt(good);
-
-        Query query = query(criteria1.andOperator(criteria2, criteria3));
-
-        List<Article> Article = ArticleDao.findArticle(query);
         return Article;
     }
 
