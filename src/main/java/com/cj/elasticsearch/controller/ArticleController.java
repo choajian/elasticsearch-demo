@@ -2,7 +2,7 @@ package com.cj.elasticsearch.controller;
 
 import com.cj.elasticsearch.model.Article;
 import com.cj.elasticsearch.service.ArticleService;
-import com.cj.mongodb.service.MongodbArticleService;
+import com.cj.mongodb.service.MongodbBidService;
 import org.elasticsearch.common.lucene.search.function.FunctionScoreQuery;
 import org.elasticsearch.index.query.BoolQueryBuilder;
 import org.elasticsearch.index.query.MatchQueryBuilder;
@@ -34,17 +34,17 @@ public class ArticleController {
     ArticleService articleService;
 
     @Autowired
-    MongodbArticleService mongodbArticleService;
+    MongodbBidService mongodbbidService;
 
 
     /**
      * 保存数据
      */
     @RequestMapping("/articleSaveList")
-    public void articleSaveList(){
+    public void articleSaveList(String date){
         List<Article> list = new ArrayList<>();
-
-        mongodbArticleService.findArticle("2018-07-09",100);
+        if(date==null || "".equals(date)) date="2018-07-09";
+        list = Article.toArticleList(mongodbbidService.findBid(date));
 
         articleService.articleSaveList(list);
     }

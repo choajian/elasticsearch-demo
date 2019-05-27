@@ -1,8 +1,8 @@
 package com.cj.mongodb.service.impl;
 
-import com.cj.elasticsearch.model.Article;
-import com.cj.mongodb.dao.MongodbArticleDao;
-import com.cj.mongodb.service.MongodbArticleService;
+import com.cj.mongodb.dao.MongodbBidDao;
+import com.cj.mongodb.model.Bid;
+import com.cj.mongodb.service.MongodbBidService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -20,26 +20,26 @@ import static org.springframework.data.mongodb.core.query.Query.query;
  * @date 2019-05-26
  */
 @Service
-public class MongodbArticleServiceImpl implements MongodbArticleService {
+public class MongodbBidServiceImpl implements MongodbBidService {
     @Autowired
-    MongodbArticleDao ArticleDao;
+    MongodbBidDao BidDao;
 
     @Override
-    public Article findById(String id) {
-        return ArticleDao.findById(id);
+    public Bid findById(String id) {
+        return BidDao.findById(id);
     }
 
     @Override
-    public Article addDict(Article Article) {
+    public Bid addDict(Bid Bid) {
 
-        return ArticleDao.addDict(Article);
+        return BidDao.addDict(Bid);
     }
 
     @Override
-    public List<Article> queryBad(int bad) {
+    public List<Bid> queryBad(int bad) {
         Criteria criteria = where("bad").gte(bad);
 
-        return ArticleDao.queryBad(criteria);
+        return BidDao.queryBad(criteria);
     }
 
     @Override
@@ -48,18 +48,18 @@ public class MongodbArticleServiceImpl implements MongodbArticleService {
         Update update = new Update();
         update.inc("good", 1);
 
-        long updateResult = ArticleDao.addOne(criteria, update);
+        long updateResult = BidDao.addOne(criteria, update);
 
         StringBuilder append = new StringBuilder().append("成功修改--->").append(updateResult);
         return append.toString();
     }
 
     @Override
-    public List<Article> findArticle(String createdate, int pageNum) {
+    public List<Bid> findBid(String createdate,int pageNum) {
         Criteria criteria = where("createdate").in(createdate);
         Query query = query(criteria);
         //查询总数
-        long totalCount = ArticleDao.count(query);
+        long totalCount = BidDao.count(query);
         //每页个数
         int numOfPage = 10;
         //计算总数
@@ -69,22 +69,33 @@ public class MongodbArticleServiceImpl implements MongodbArticleService {
         int skip = (pageNum - 1) * numOfPage;
         query.skip(skip).limit(numOfPage);
 
-        List<Article> Article = ArticleDao.findArticle(query, numOfPage);
+        List<Bid> bids = BidDao.findBid(query, numOfPage);
 
-        return Article;
+        return bids;
     }
 
     @Override
-    public Article updateDict(Article Article) {
+    public List<Bid> findBid(String createdate) {
+        Criteria criteria = where("createdate").in(createdate);
+        Query query = query(criteria);
 
-        return ArticleDao.updateDict(Article);
+        List<Bid> bids = BidDao.findBid(query);
+
+        return bids;
+    }
+
+
+    @Override
+    public Bid updateDict(Bid Bid) {
+
+        return BidDao.updateDict(Bid);
     }
 
     @Override
-    public Article deleteDict(String id) {
-        Article Article = new Article();
-        Article.setId(id);
+    public Bid deleteDict(String id) {
+        Bid Bid = new Bid();
+        Bid.setId(id);
 
-        return ArticleDao.deleteDict(Article);
+        return BidDao.deleteDict(Bid);
     }
 }

@@ -1,26 +1,22 @@
-package com.cj.elasticsearch.model;
+package com.cj.mongodb.model;
 
-import com.cj.mongodb.model.Bid;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.elasticsearch.annotations.*;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-import java.util.UUID;
 
 /**
  * 文章实体
  * @author 晁建
  * @date 2019-05-26
  */
-@Document(indexName="article_index",type="article",shards=5,replicas=1,indexStoreType="fs",refreshInterval="-1")
-public class Article implements Serializable {
+@Document(collection="bid")
+public class Bid implements Serializable {
     private static final long serialVersionUID = 551589397625941750L;
 
     @Id
-    private Integer id;
+    private String id;
     /**标题*/
     private String title;
     /**内容*/
@@ -33,10 +29,10 @@ public class Article implements Serializable {
 
     private String createdate;
 
-    public Article() {
+    public Bid() {
     }
 
-    public Article(Long String, String title, String abstracts, String content, Date postTime, Long clickCount,String createDate) {
+    public Bid(Long String, String title, String abstracts, String content, Date postTime, Long clickCount, String createDate) {
         this.id = id;
         this.title = title;
         this.content = content;
@@ -45,11 +41,11 @@ public class Article implements Serializable {
         this.createdate = createdate;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -91,23 +87,6 @@ public class Article implements Serializable {
 
     public void setCreatedate(String createdate) {
         this.createdate = createdate;
-    }
-
-    private static Integer i=0;
-    public static List<Article> toArticleList(List<Bid> bids){
-        List<Article> articles=new ArrayList<>();
-        Article article=null;
-        for (Bid bid:bids) {
-            article=new Article();
-            //article.setId(++i);
-            article.setContent(bid.getContent());
-            article.setTitle(bid.getTitle());
-            article.setPostTime(bid.getPostTime());
-            article.setCreatedate(bid.getCreatedate());
-            articles.add(article);
-        }
-        return articles;
-
     }
 
     @Override
