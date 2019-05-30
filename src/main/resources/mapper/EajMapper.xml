@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cj.sybaseindex.sybase.mapper.EajMapper" >
+
+    <select id="getEajByAhdm" resultType="java.util.Map">
+        SELECT AHDM,AH,SARQ,LARQ,DSR FROM EAJ WHERE AHDM = #{ahdm}
+    </select>
+
+    <select id="getEajConnectionByDay" resultType="java.util.List">
+        SELECT AHDM,AH,SARQ,LARQ,DSR FROM EAJ WHERE SARQ = #{sarq}
+    </select>
+</mapper>
