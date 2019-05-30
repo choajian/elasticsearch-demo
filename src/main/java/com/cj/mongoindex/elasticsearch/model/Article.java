@@ -30,18 +30,18 @@ public class Article implements Serializable {
     /**点击率*/
     private Long clickCount;
 
-    private String createdate;
+    private String createDate;
 
     public Article() {
     }
 
-    public Article(Long String, String title, String abstracts, String content, Date postTime, Long clickCount,String createDate) {
+    public Article(Integer id, String title, String content, Date postTime, Long clickCount,String createDate) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.postTime = postTime;
         this.clickCount = clickCount;
-        this.createdate = createdate;
+        this.createDate = createDate;
     }
 
     public Integer getId() {
@@ -84,12 +84,12 @@ public class Article implements Serializable {
         this.clickCount = clickCount;
     }
 
-    public String getCreatedate() {
-        return createdate;
+    public String getCreateDate() {
+        return createDate;
     }
 
-    public void setCreatedate(String createdate) {
-        this.createdate = createdate;
+    public void setCreateDate(String createDate) {
+        this.createDate = createDate;
     }
 
     private static Integer i=0;
@@ -102,7 +102,7 @@ public class Article implements Serializable {
             article.setContent(bid.getContent());
             article.setTitle(bid.getTitle());
             article.setPostTime(bid.getPostTime());
-            article.setCreatedate(bid.getCreatedate());
+            article.setCreateDate(bid.getCreatedate());
             articles.add(article);
         }
         return articles;

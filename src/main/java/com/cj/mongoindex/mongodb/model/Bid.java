@@ -32,13 +32,13 @@ public class Bid implements Serializable {
     public Bid() {
     }
 
-    public Bid(Long String, String title, String abstracts, String content, Date postTime, Long clickCount, String createDate) {
+    public Bid(String id, String title, String abstracts, String content, Date postTime, Long clickCount, String createDate) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.postTime = postTime;
         this.clickCount = clickCount;
-        this.createdate = createdate;
+        this.createdate = createDate;
     }
 
     public String getId() {
