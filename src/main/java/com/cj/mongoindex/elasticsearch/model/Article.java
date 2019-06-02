@@ -6,7 +6,6 @@ import org.springframework.data.elasticsearch.annotations.*;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -19,36 +18,33 @@ public class Article implements Serializable {
     private static final long serialVersionUID = 551589397625941750L;
 
     @Id
-    private Integer id;
+    private String id;
     /**标题*/
     private String title;
     /**内容*/
+    @Field(fielddata = true,type=FieldType.Text)
     private String content;
-    /**发表时间*/
-    private Date postTime;
-
-    /**点击率*/
-    private Long clickCount;
 
     private String createDate;
+
+    private String createTime;
 
     public Article() {
     }
 
-    public Article(Integer id, String title, String content, Date postTime, Long clickCount,String createDate) {
+    public Article(String id, String title, String content,String createDate,String createTime) {
         this.id = id;
         this.title = title;
         this.content = content;
-        this.postTime = postTime;
-        this.clickCount = clickCount;
         this.createDate = createDate;
+        this.createTime = createTime;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -68,22 +64,6 @@ public class Article implements Serializable {
         this.content = content;
     }
 
-    public Date getPostTime() {
-        return postTime;
-    }
-
-    public void setPostTime(Date postTime) {
-        this.postTime = postTime;
-    }
-
-    public Long getClickCount() {
-        return clickCount;
-    }
-
-    public void setClickCount(Long clickCount) {
-        this.clickCount = clickCount;
-    }
-
     public String getCreateDate() {
         return createDate;
     }
@@ -92,17 +72,25 @@ public class Article implements Serializable {
         this.createDate = createDate;
     }
 
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
     private static Integer i=0;
     public static List<Article> toArticleList(List<Bid> bids){
         List<Article> articles=new ArrayList<>();
         Article article=null;
         for (Bid bid:bids) {
             article=new Article();
-            //article.setId(++i);
+            article.setId(bid.getId());
             article.setContent(bid.getContent());
             article.setTitle(bid.getTitle());
-            article.setPostTime(bid.getPostTime());
             article.setCreateDate(bid.getCreatedate());
+            article.setCreateTime(bid.getCreatetime());
             articles.add(article);
         }
         return articles;
@@ -115,8 +103,6 @@ public class Article implements Serializable {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
-                ", postTime=" + postTime +
-                ", clickCount=" + clickCount +
                 '}';
     }
 }

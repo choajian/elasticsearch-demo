@@ -61,7 +61,7 @@ public class MongodbBidServiceImpl implements MongodbBidService {
         //查询总数
         long totalCount = BidDao.count(query);
         //每页个数
-        int numOfPage = 10;
+        int numOfPage = 100;
         //计算总数
         long totalPage =
                 totalCount % numOfPage == 0 ? (totalCount / numOfPage) : (totalCount / numOfPage + 1);

@@ -12,7 +12,7 @@ import java.util.List;
  * @author 晁建
  * @date 2019-05-26
  */
-public interface ArticleSearchRepository extends ElasticsearchRepository<Article, Long> {
+public interface ArticleSearchRepository extends ElasticsearchRepository<Article, String> {
 
     /**
      * 按照标题精确查找
@@ -20,25 +20,6 @@ public interface ArticleSearchRepository extends ElasticsearchRepository<Article
      * @return
      */
     List<Article> findByTitle(String title);
-
-
-    /**
-     * AND 语句查询
-     *
-     * @param tile 文章标题
-     * @param clickCount 点击次数
-     * @return
-     */
-    List<Article> findByTitleAndClickCount(String tile, Integer clickCount);
-
-    /**
-     * OR 语句查询
-     *
-     * @param tile
-     * @param clickCount
-     * @return
-     */
-    List<Article> findByTitleOrClickCount(String tile, Integer clickCount);
 
     /**
      * 查询文章内容分页

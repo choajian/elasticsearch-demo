@@ -2,9 +2,9 @@ package com.cj.mongoindex.mongodb.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * 文章实体
@@ -21,25 +21,21 @@ public class Bid implements Serializable {
     private String title;
     /**内容*/
     private String content;
-    /**发表时间*/
-    private Date postTime;
-
-    /**点击率*/
-    private Long clickCount;
 
     private String createdate;
+
+    private String createtime;
 
     public Bid() {
     }
 
-    public Bid(String id, String title, String abstracts, String content, Date postTime, Long clickCount, String createDate) {
-        this.id = id;
+    public Bid(String title, String content, String createDate,String createtime) {
         this.title = title;
         this.content = content;
-        this.postTime = postTime;
-        this.clickCount = clickCount;
         this.createdate = createDate;
+        this.createtime = createtime;
     }
+
 
     public String getId() {
         return id;
@@ -65,22 +61,6 @@ public class Bid implements Serializable {
         this.content = content;
     }
 
-    public Date getPostTime() {
-        return postTime;
-    }
-
-    public void setPostTime(Date postTime) {
-        this.postTime = postTime;
-    }
-
-    public Long getClickCount() {
-        return clickCount;
-    }
-
-    public void setClickCount(Long clickCount) {
-        this.clickCount = clickCount;
-    }
-
     public String getCreatedate() {
         return createdate;
     }
@@ -89,14 +69,20 @@ public class Bid implements Serializable {
         this.createdate = createdate;
     }
 
+    public String getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(String cratetime) {
+        this.createtime = cratetime;
+    }
+
     @Override
     public String toString() {
-        return "Article{" +
+        return "Bid{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
-                ", postTime=" + postTime +
-                ", clickCount=" + clickCount +
                 '}';
     }
 }
