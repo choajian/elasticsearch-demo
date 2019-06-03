@@ -8,19 +8,24 @@ import java.io.Serializable;
 
 /**
  * 文章实体
+ *
  * @author 晁建
  * @date 2019-05-26
  */
-@Document(collection="bid")
+@Document(collection = "bid")
 public class Bid implements Serializable {
     private static final long serialVersionUID = 551589397625941750L;
 
     @Id
     private String id;
-    /**标题*/
+    /**
+     * 标题
+     */
     private String title;
-    /**内容*/
-    private String content;
+    /**
+     * 内容
+     */
+    private Object content;
 
     private String createdate;
 
@@ -29,7 +34,7 @@ public class Bid implements Serializable {
     public Bid() {
     }
 
-    public Bid(String title, String content, String createDate,String createtime) {
+    public Bid(String title, String content, String createDate, String createtime) {
         this.title = title;
         this.content = content;
         this.createdate = createDate;
@@ -53,11 +58,11 @@ public class Bid implements Serializable {
         this.title = title;
     }
 
-    public String getContent() {
+    public Object getContent() {
         return content;
     }
 
-    public void setContent(String content) {
+    public void setContent(Object content) {
         this.content = content;
     }
 
