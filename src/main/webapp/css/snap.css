@@ -1,0 +1,7 @@
+@CHARSET "UTF-8";
+body {margin: 0 0 0 0;}
+table {table-layout: fixed}
+td {word-break: break-all; word-wrap:break-word; font-size: 120%; line-height:18px; font-family: "宋体"}
+a {color: #261cdc}
+.ttl {font-weight:bold; font-size: 14px}
+.btm {color:#666666; text-align:center}

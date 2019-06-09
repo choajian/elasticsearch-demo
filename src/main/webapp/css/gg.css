@@ -1,0 +1,76 @@
+.gg-container{ width: 100%; min-height: 490px; position: relative;}
+.gg-roof{ width: 100%; height: 20px; background-color: rgb(227, 236, 249); border-top: #4071d3 1px solid;}
+.gg-leftbar,.gg-rightbar{ width: 220px; min-height: 300px; margin: 10px 0px 10px 10px; border: 1px solid #e0e0e0; background: #fafafa;}
+.gg-rightbar{ margin: 10px 10px 10px 0px; height: 680px;}
+.gg-title{ height: 30px; width: 100%; background: #e5e5e5; border-bottom: 1px solid #e0e0e0; text-indent: 15px; color: #333; line-height: 30px; font-size: 14px;}
+.gg-box{ width: 210px; padding: 5px; height: auto;}
+.gg-bage{ height: 20px; background: #428bca; width: auto; color: white; padding: 0px 5px; border-radius: 3px;}
+.gg-bage span{display: inline-block;min-width: 10px;padding: 2px 5px;font-size: 12px;font-weight: 700;line-height: 1;color: #428bca;text-align: center;white-space: nowrap;vertical-align: baseline;background-color: #fff;border-radius: 10px; margin:2px 0px 0px 0px;}
+.gg-list{ width: 190px; height: auto; padding-right: 5px;}
+.gg-list li{ display: inline; width: 100%; float: left; padding: 5px 0px; border-bottom: 1px dotted #ccc;}
+.gg-list span{ width: 100%; display: block; color: #ff3b01}
+.gg-list li a{ color: black;}
+.gg-list li a:hover{ color: #ff3b01;}
+.gg-con{ width: 210px; padding: 10px;}
+.gg-con label{ display: block; width: 200px; height: 30px; line-height: 30px; font-size: 13px;}
+.gg-con input{ width: 200px; height: 24px;}
+.gg-con input.gg-short{ width: 160px;}
+.gg-con button{ padding: 2px 4px;}
+
+.gg-content{ width: auto; margin: 10px 0px 0px 8px; min-height: 300px; border: 1px solid #e0e0e0; background: #fafafa;}
+.gg-conbox{ float: left; width: 100%; height: 650px; overflow-y: auto;}
+.gg-conbox2{ float: left; width: 100%; height: 650px; overflow-y: auto;}
+.gg-biaoti{ width: 100%; height:auto!important; height: 40px; min-height: 40px; line-height: 40px; text-align: center;}
+.gg-biaoti h1{ font-size: 18px;}
+
+.gg-neirong p{ font-size: 13px;}
+.gg-search-con{ overflow-x: hidden;}
+
+.gg-btn{ width: 100%; height: 50px; text-align: center; padding-top: 10px;}
+.gg-btn a{ display: inline-block; font-size: 16px; width: 100px; height: 50px; line-height: 50px;text-align: center; color: blue; background: #eee;}
+.gg-btn a:hover{ background: #bbb;}
+
+.gg-link{ width: 200px; height: 20px; line-height: 20px; text-align: right; font-size: 14px; padding: 10px 0px;}
+
+.div2{	position:fixed; left:232px; top:-10px; _position:absolute; z-index:250;}
+
+
+
+/*xmxc*/
+.xm-container{ width: 100%; min-height: 500px; position: relative;}
+.xm-roof{ width: 100%; height: 20px; background-color: rgb(227, 236, 249); border-top: #4071d3 1px solid;}
+.xm-leftbar,.xm-rightbar{ width: 220px; min-height: 680px; margin: 10px 0px 10px 10px; border: 1px solid #e0e0e0; background: #fafafa;}
+.xm-rightbar{ margin: 10px 10px 10px 0px;}
+.xm-content{ width: auto; margin: 10px 0px 0px 8px; min-height: 300px; border: 1px solid #e0e0e0; background: #fafafa;}
+.xm-conbox{ float: left; padding: 10px; width: auto; height: 650px; overflow-y: auto;}
+.xm-line{ width: 100%; height: 30px;}
+.xm-list{ width: 170px; height: auto; padding-left: 40px;}
+.xm-list li{ width: 100%; line-height: 25px;}
+.xm-list li a{ color: #333;}
+.xm-list li a:hover{ color: #ff3b01;}
+.xm-link{ height: 20px; line-height: 20px; text-align: right; font-size: 13px; padding: 5px 10px 5px 0px;}
+.xm-btn a{ display: inline-block; font-size: 13px; width:auto!important; width: 80px; height: 30px; line-height: 30px;text-align: center; color: #019aff; background: #eee;}
+.xm-btn a:hover{ background: #019aff; color: white;}
+.xm-title{ width: 100%; height: 40px; text-align: center; padding-top: 10px;}
+.xm-title span{ display: inline-block; font-size: 13px; min-width: 80px; height: 30px; line-height: 30px;text-align: center; color: white; background: #019aff; padding: 0px 8px;}
+.xm-title label{ padding: 0px 0px 0px 50px; }
+.xm-title label input{ vertical-align: middle;}
+.xm-arrow-s{ width: 100%; height: 90px; background: url(../image/line-s.jpg) center no-repeat;}
+.xm-arrow-x{ width: 100%; height: 88px; background: url(../image/line-x.jpg) center no-repeat;}
+.xm-btn{ width: 100%; height: auto; text-align: center; padding: 0px 0px;}
+.xm-btn span{ display: inline-block; *display: inline; *zoom: 1; width: auto!important; width: 90px; min-width: 90px; height: 40px; background: #66cc66; color: white; line-height: 40px; text-align: center; font-size: 16px; padding: 0px 5px;}
+.xm-btn button{ width: 100px; height: 40px;}
+
+/*kuaizhao*/
+.g-kz-header{ height: 132px; border-bottom: 1px solid #999;}
+.g-kz-line{ height: 25px; width: 1000px; line-height: 25px; text-indent: 10px; overflow: hidden;}
+.f-fc1{ color: #666666;}
+.g-kz-link{ width: auto; height: 25px; line-height: 25px; display: inline; padding-right: 10px;}
+.g-kz-link li{ display: inline; padding: 0px 3px;}
+.kz-conframe{ width: 100%;}
+
+/*table*/
+.m-table{ width: 98%; margin: 10px 1%;}
+.m-table, .m-table td,.m-table th{ border: 1px solid #ccc;}
+.m-table td{ padding: 3px 5px;}
+.m-table th{ padding: 5px; font-weight: bold; background: #f1f1f1;}

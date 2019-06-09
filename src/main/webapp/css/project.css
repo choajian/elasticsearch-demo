@@ -1,0 +1,147 @@
+#PRO_overlay {
+    background-color: #000;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+#PRO_window {
+    left: 0;
+    top: 0;
+    font-size: 1px;
+    position: absolute;
+    overflow: visible;
+    z-index: 150;
+}
+
+#PRO_window .content {
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+#PRO_frame {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+
+.PRO_Gallery {
+    margin: 0 22px 0 22px;
+}
+
+.PRO_Gallery .content {
+    background-color: #fff;
+    border: 3px solid #ddd;
+}
+
+.PRO_header {
+    top: 10px;
+    left: 0;
+    margin: 0;
+    z-index: 500;
+    position: absolute;
+    border-bottom: 2px solid #555;
+    border-top: 2px solid #555;
+}
+
+.PRO_header .inner {
+    background-color: #333;
+    font-family: Arial, Verdana, sans-serif;
+    padding: 2px 20px 2px 20px;
+}
+
+.PRO_header table {
+    margin: 0;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.PRO_header .caption {
+    text-align: left;
+    color: #eee;
+    white-space: nowrap;
+    font-size: 20px;
+}
+
+.PRO_header .close {
+    text-align: right;
+}
+
+.PRO_header .close img {
+    z-index: 500;
+    cursor: pointer;
+}
+
+.PRO_header .middle {
+    white-space: nowrap;
+    text-align: center;
+}
+
+
+#PRO_middle {
+    color: #eee;
+}
+
+#PRO_middle img {
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+#PRO_middle .disabled {
+    cursor: default;
+}
+
+#PRO_middle .left {
+    padding-right: 10px;
+}
+
+#PRO_middle .right {
+    padding-left: 10px;
+}
+
+
+.PRO_Window .content {
+    background-color: #fff;
+    border: 3px solid #ccc;
+    border-top: none;
+}
+
+.PRO_Window .header {
+    border-bottom: 1px solid #aaa;
+    border-top: 1px solid #999;
+    border-left: 3px solid #ccc;
+    border-right: 3px solid #ccc;
+    margin: 0;
+
+    height: 22px;
+    font-size: 12px;
+    padding: 3px 0;
+    color: #333;
+}
+
+.PRO_Window .caption {
+    font-size: 12px;
+    text-align: left;
+    font-weight: bold;
+    white-space: nowrap;
+    padding-right: 20px;
+}
+
+.PRO_Window .close { text-align: right; }
+.PRO_Window .close span { 
+    font-size: 12px;
+    cursor: pointer; 
+}
+.PRO_Window .close img {
+    cursor: pointer;
+    padding: 0 3px 0 0;
+}
+
+.PRO_Window .on { border-bottom: 1px solid #333; }
+.PRO_Window .click { border-bottom: 1px solid red; }

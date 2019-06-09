@@ -1,0 +1,172 @@
+BODY {
+	MARGIN: 0px 9px
+}
+TD {
+	LINE-HEIGHT: 18px; FONT-FAMILY: "宋体"
+}
+DIV U {
+	COLOR: #c60a00
+}
+DIV {
+	/* WIDTH: 100%;  */LINE-HEIGHT: 150%
+}
+.ttl {
+	COLOR: #261cdc
+}
+.ttl:visited {
+	COLOR: #800080
+}
+.nav {
+	PADDING-RIGHT: 5px; COLOR: #333333; LINE-HEIGHT: 180%
+}
+.mnu {
+	PADDING: 3px 4px 2px 28px
+}
+.fav {
+	FONT-SIZE: 100%; COLOR: #333333
+}
+.cur {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; HEIGHT: 21px
+}
+.tab {
+	FONT-SIZE: 14px; COLOR: #0000cc; HEIGHT: 21px
+}
+.inp {
+	FONT-SIZE: 16px
+}
+.btn {
+	FONT-SIZE: 14px
+}
+.adv {
+	FONT-SIZE: 14px; COLOR: #0000cc
+}
+.pg {
+	FONT-SIZE: 14px; COLOR: #0000cc
+}
+.rlt {
+	FONT-SIZE: 14px;
+}
+.rlt a {
+ COLOR: #0000ff;
+}
+.tip {
+	FONT-SIZE: 12px; COLOR: #666666
+}
+.btm {
+	FONT-SIZE: 12px; BACKGROUND: #e6e6e6; COLOR: #666666; TEXT-ALIGN: center
+}
+.snap {
+	FONT-SIZE: 100%; COLOR: #666666
+}
+A.snap:link {
+	FONT-SIZE: 100%; COLOR: #666666
+}
+A.snap:visited {
+	COLOR: #660066
+}
+A.item:link {
+	COLOR: #000000
+}
+A.item:hover {
+	COLOR: #000000; FONT-WEIGHT: bold;
+}
+A.more {
+	COLOR: #000000
+}
+
+.tableBlock{
+	padding: 3px 10px;
+}
+.tableBlock .row{
+	margin: 5px 0;
+}
+.tableBlock .block{
+	float:left;
+	min-width:320px;
+	width: auto;
+	padding-top:5px;
+}
+.tableBlock .block2{
+	float:left;
+	min-width:285px;
+	width: auto;
+	padding-top:5px;
+}
+.tableBlock .block label{
+	display:inline-block;
+	text-align:right;
+	/* width:100px; */
+	min-width:80px;
+}
+.tableBlock .block input[type="text"]{
+	display:inline-block;
+	text-align:left;
+	width:180px;
+	min-width:180px;
+	margin-right:5px;
+}
+
+.tableBlock .block .inputBlock{
+	display:inline-block;
+	text-align:left;
+	width:120px;
+	min-width:120px;
+	margin-right:5px;
+}
+
+.tableBlock .block_time{
+	float:left;
+	min-width:240px;
+	width: auto;
+	padding-top:5px;
+}
+.tableBlock .block_time label{
+	display:inline-block;
+	text-align:right;
+	width:auto;
+	min-width:100px;
+}
+.tableBlock .block_time input{
+	display:inline-block;
+	text-align:left;
+	width:100px;
+	min-width:100px;
+	margin-right:5px;
+}
+
+.tableBlock .block_area{
+	float:left;
+	width: 320px;
+	padding-top:5px;
+}
+.tableBlock .block_area label{
+	display:inline-block;
+	text-align:right;
+	width:100px;
+	min-width:100px;
+}
+.tableBlock .block_area input{
+	display:inline-block;
+	text-align:left;
+	width:100px;
+	min-width:100px;
+}
+
+
+.tableBlock .block_radio{
+	float:left;
+	width: 320px;
+	padding-top:5px;
+}
+.tableBlock .block_radio .label{
+	display:inline-block;
+	text-align:right;
+	width:100px;
+	min-width:100px;
+}
+.clear{
+	clear: both;
+}
+
+
+
