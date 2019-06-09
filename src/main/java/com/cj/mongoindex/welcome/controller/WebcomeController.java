@@ -1,4 +1,4 @@
-package com.cj.mongoindex.elasticsearch.controller;
+package com.cj.mongoindex.welcome.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -6,7 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.Map;
 
 /**
- * 初始请求
+ * @program: elasticsearch-demo
+ * @description: 初始请求
+ * @author: 晁建
+ * @create: 2019-06-07 23:04
  */
 @Controller
 public class WebcomeController {

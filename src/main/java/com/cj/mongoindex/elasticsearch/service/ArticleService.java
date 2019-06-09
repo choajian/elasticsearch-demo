@@ -1,6 +1,7 @@
 package com.cj.mongoindex.elasticsearch.service;
 
 import com.cj.mongoindex.elasticsearch.model.Article;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.core.query.SearchQuery;
 
@@ -44,7 +45,7 @@ public interface ArticleService {
      * @param pageable  分页排序
      * @return
      */
-    List<Article> findByContent(String content, Pageable pageable);
+    Page<Article> findByContent(String content, Pageable pageable);
 
     /**
      * 多条件聚合搜索

@@ -6,6 +6,12 @@ import java.io.IOException;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
+/**
+ * 压缩工具类
+ *
+ * @author 晁建
+ * @date 2019-05-26
+ */
 public class ZipUtils {
 
     public static final String GZIP_ENCODE_UTF_8 = "UTF-8";

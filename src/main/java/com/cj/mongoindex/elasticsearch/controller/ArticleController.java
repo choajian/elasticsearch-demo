@@ -4,19 +4,10 @@ import com.cj.mongoindex.elasticsearch.model.Article;
 import com.cj.mongoindex.elasticsearch.service.ArticleService;
 import com.cj.mongoindex.mongodb.service.MongodbBidService;
 import com.cj.mongoindex.mongodb.utils.DateUtils;
-import org.elasticsearch.common.lucene.search.function.FunctionScoreQuery;
-import org.elasticsearch.index.query.BoolQueryBuilder;
-import org.elasticsearch.index.query.MatchQueryBuilder;
-import org.elasticsearch.index.query.QueryBuilders;
-import org.elasticsearch.index.query.RangeQueryBuilder;
-import org.elasticsearch.index.query.functionscore.FunctionScoreQueryBuilder;
-import org.elasticsearch.index.query.functionscore.ScoreFunctionBuilders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
-import org.springframework.data.elasticsearch.core.query.SearchQuery;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -51,12 +42,12 @@ public class ArticleController {
                 Date d = DateUtils.getBeforeOrAfterDate(new Date(), -i);
                 String dateStr = DateUtils.dateToStr(d);
                 System.out.println(dateStr);
-                int num=1;
-                while(true){
-                    list = Article.toArticleList(mongodbbidService.findBid(dateStr,num++));
+                int num = 1;
+                while (true) {
+                    list = Article.toArticleList(mongodbbidService.findBid(dateStr, num++));
                     if (list != null && list.size() != 0) {
                         articleService.articleSaveList(list);
-                    }else{
+                    } else {
                         break;
                     }
                 }
@@ -98,7 +89,7 @@ public class ArticleController {
     @RequestMapping("/findByContent")
     public Iterable<Article> findByContent(String content) {
         // 分页参数:分页从0开始，content倒序
-        Pageable pageable = PageRequest.of(0, 5, Sort.Direction.DESC, "content");
+        Pageable pageable = PageRequest.of(0, 5, Sort.Direction.DESC, "createDate");
 
         return articleService.findByContent(content, pageable);
     }

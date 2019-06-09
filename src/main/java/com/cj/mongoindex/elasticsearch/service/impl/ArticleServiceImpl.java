@@ -45,12 +45,12 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public List<Article> findByContent(String content, Pageable pageable) {
+    public Page<Article> findByContent(String content, Pageable pageable) {
         Page<Article> pageageRsutl=articleSearchRepository.findByContent(content, pageable );
 
         if (pageageRsutl == null) return null;
 
-        return pageageRsutl.getContent();
+        return pageageRsutl;
     }
 
     @Override

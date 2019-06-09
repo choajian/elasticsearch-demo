@@ -36,6 +36,18 @@ public class Article implements Serializable {
 
     private String createTime;
 
+    private String bigCate;
+
+    private String province;
+
+    private String area;
+
+    private String publishDate;
+
+    private String sourceSite;
+
+    private String digest;
+
     public Article() {
     }
 
@@ -85,6 +97,54 @@ public class Article implements Serializable {
 
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
+    }
+
+    public String getBigCate() {
+        return bigCate;
+    }
+
+    public void setBigCate(String bigCate) {
+        this.bigCate = bigCate;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    public String getPublishDate() {
+        return publishDate;
+    }
+
+    public void setPublishDate(String publishDate) {
+        this.publishDate = publishDate;
+    }
+
+    public String getSourceSite() {
+        return sourceSite;
+    }
+
+    public void setSourceSite(String sourceSite) {
+        this.sourceSite = sourceSite;
+    }
+
+    public String getDigest() {
+        return digest;
+    }
+
+    public void setDigest(String digest) {
+        this.digest = digest;
     }
 
     private static Integer i = 0;
