@@ -253,7 +253,7 @@
                                     <label>【${article.bigCate }】</label>
                                     <h1>
                                         <c:if test="${not empty article.id}">
-                                        <a name='ann' href="${ctx }/attention/attentionProjectInfo?id=${article.id }"
+                                        <a name='link' href="${article.url}"
                                            target="_blank">
                                             </c:if>
                                             <c:if test="${empty article.id}">
@@ -266,8 +266,8 @@
                                         ${article.digest }
                                 </p>
                                 <p class="u-result-info">
-                                    <font>${article.sourceSite }</font>　<font>${article.publishDate }</font> - <a
-                                        name='ann' href="${ctx }/search/toWeb?id=${article.id }" rel="PRO_page_fs[]"
+                                    <font>${article.hostName }</font>　<font>${article.createDate }</font> - <a
+                                        name='link' href="${article.url}" rel="PRO_page_fs[]"
                                         target="_blank">原始链接</a>
                                 </p>
                             </div>
@@ -286,26 +286,26 @@
                 </c:choose>
                 ${resultPage.pageStr }
                 <div class="m-footer-search f-fl">
-                    <form id='searchForm' name='searchForm' method="post" action='result'>
+                    <form id='searchForm' name='searchForm' method="post" action='search'>
                         <input type='hidden' id='id' name='id'/>
                         <input type='hidden' id='pageFlag' name='pageFlag'/>
-                        <input type='hidden' id='str_province_code' name='advancedQuery.str_province_code'
+                        <input type='hidden' id='str_province_code' name='str_province_code'
                                value='${advancedQuery.str_province_code }'/>
-                        <input type='hidden' id='str_area' name='advancedQuery.str_area'
+                        <input type='hidden' id='str_area' name='str_area'
                                value='${advancedQuery.str_area }'/>
-                        <input type='hidden' id='str_type' name='advancedQuery.str_type'
+                        <input type='hidden' id='str_type' name='str_type'
                                value='${advancedQuery.str_type }'/>
-                        <input type='hidden' id='annouName' name='advancedQuery.str_query'
+                        <input type='hidden' id='annouName' name='str_query'
                                value='${advancedQuery.str_query }'/>
-                        <input type='hidden' id='str_query_second' name='advancedQuery.str_query_second'
+                        <input type='hidden' id='str_query_second' name='str_query_second'
                                value='${advancedQuery.str_query_second }'/>
-                        <input type='hidden' id='str_pagesize' name='advancedQuery.str_pagesize'
+                        <input type='hidden' id='str_pagesize' name='str_pagesize'
                                value='${advancedQuery.str_pagesize }'/>
-                        <input type='hidden' id='str_not_query' name='advancedQuery.str_not_query'
+                        <input type='hidden' id='str_not_query' name='str_not_query'
                                value='${advancedQuery.str_not_query }'/>
-                        <input type='hidden' id='str_titileOrContent' name='advancedQuery.str_titileOrContent'
+                        <input type='hidden' id='str_titileOrContent' name='str_titileOrContent'
                                value='${advancedQuery.str_titileOrContent}'/>
-                        <input type='hidden' id='str_year' name='advancedQuery.str_year'
+                        <input type='hidden' id='str_year' name='str_year'
                                value='${advancedQuery.str_year }'/>
                         <input type='hidden' id='currentUserName' name='currentUserName' value='${currentUserName }'/>
                         <input type="hidden" id='dir' name="dir" value="login">
@@ -327,14 +327,6 @@
                         <div class="u-search-btn f-fl">
                             <input type="button" id='searchBtn' onmousedown="this.className='u-search-btn-down'"
                                    onmouseout="this.className=''" value=" 搜 索 " onclick="searchKeyWord(1, '');"/>&nbsp;
-                        </div>
-                        <div class="u-search-input f-fl" style='width:150px;'>
-                            <input style='width:140px;' type="text" size="36" id="autocomplete0" name='autocomplete'
-                                   value='${advancedQuery.str_query_second }' maxlength="50"/>
-                        </div>
-                        <div class="u-search-btn f-fl">
-                            <input type="button" value="结果中搜索" onmousedown="this.className='u-search-btn-down'"
-                                   onmouseout="this.className=''" onclick="searchKeyWord(1.1, '0');">
                         </div>
                     </form>
                 </div>

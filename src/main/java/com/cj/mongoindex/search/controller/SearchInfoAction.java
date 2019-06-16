@@ -14,8 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * @program: elasticsearch-demo
@@ -42,11 +41,11 @@ public class SearchInfoAction {
      *
      * @return
      */
-    @PostMapping("/search")
-    public String result(ModelMap model,AdvancedQuery advancedQuery) {
+    @RequestMapping("/search")
+    public String result(ModelMap model, AdvancedQuery advancedQuery) {
 
         // 无关键词则返回首页
-        if (null == advancedQuery || advancedQuery.getStr_query()==null) {
+        if (null == advancedQuery || advancedQuery.getStr_query() == null) {
             return "index";
         }
 
@@ -59,7 +58,7 @@ public class SearchInfoAction {
 
         //查询条件对象
         if (null == advancedQuery.getStr_pagesize() || advancedQuery.getStr_pagesize().isEmpty()) {
-            advancedQuery.setStr_pagesize("10");
+            advancedQuery.setStr_pagesize("20");
         }
         advancedQuery.setStr_page_number(String.valueOf(currentPage));
 
@@ -86,12 +85,26 @@ public class SearchInfoAction {
         //页面参数
         model.put("articleList", resPages.getContent()); //搜索结果集
         model.put("ResultPage", resultPage);
-        model.put("pageCount", resPages.getSize());
+        model.put("pageCount", resPages.getTotalElements());
         model.put("timeCon", String.valueOf(Math.round(endTime - startTime) / 1000.0));
         model.put("yearArray", CommUtil.currentYearArray());
 
         //结果页面
         return "es/searchInfo/result";
+    }
+
+    /**
+     * 查询项目详细信息
+     *
+     * @return
+     */
+    @RequestMapping("/attentionProjectInfo")
+    public String attentionProjectInfo(ModelMap model, String id) {
+        if (null == id || id.isEmpty()) {
+            return error404();
+        }
+
+        return "es/searchInfo/attentionProjectInfo";
     }
 
     /**
@@ -101,7 +114,7 @@ public class SearchInfoAction {
      */
     @GetMapping("error404")
     public String error404() {
-        return "error404";
+        return "../common/404";
     }
 
 }

@@ -226,7 +226,7 @@ function searchKeyWord(type){
 			break;
 	}
 	if ('' != $('#annouName').val()){
-		var url = ctx+"/search/result";
+		var url = ctx+"/search";
 	 	$("#searchForm").attr("action", url);
 		$('#searchForm').submit();
 	}

@@ -32,11 +32,40 @@ public class Article implements Serializable {
     @Field(fielddata = true, type = FieldType.Text)
     private String content;
 
+    /**
+     * 网站
+     */
+    private String host;
+
+    /**
+     * 网站名称
+     */
+    private String hostName;
+
+    /**
+     * 地址
+     */
+    private String url;
+
+    /**
+     * 大类
+     */
+    private String bigCate;
+
+    /**
+     * 小类
+     */
+    private String smallCate;
+
+    /**
+     * 创建日期
+     */
     private String createDate;
 
+    /**
+     * 创建时间
+     */
     private String createTime;
-
-    private String bigCate;
 
     private String province;
 
@@ -139,6 +168,38 @@ public class Article implements Serializable {
         this.sourceSite = sourceSite;
     }
 
+    public String getHost() {
+        return host;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
+    }
+
+    public String getHostName() {
+        return hostName;
+    }
+
+    public void setHostName(String hostName) {
+        this.hostName = hostName;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getSmallCate() {
+        return smallCate;
+    }
+
+    public void setSmallCate(String smallCate) {
+        this.smallCate = smallCate;
+    }
+
     public String getDigest() {
         return digest;
     }
@@ -146,8 +207,6 @@ public class Article implements Serializable {
     public void setDigest(String digest) {
         this.digest = digest;
     }
-
-    private static Integer i = 0;
 
     public static List<Article> toArticleList(List<Bid> bids) {
         Object o = null;
@@ -170,6 +229,11 @@ public class Article implements Serializable {
                     c = ZipUtils.uncompressToString(((Binary) o).getData());
                 }
                 article.setContent(c);
+                article.setHost(bid.getHost());
+                article.setHostName(bid.getHostname());
+                article.setBigCate(bid.getBigCate());
+                article.setSmallCate(bid.getSmallCate());
+                article.setUrl(bid.getUrl());
                 articles.add(article);
             }catch (Exception e){
                 e.printStackTrace();

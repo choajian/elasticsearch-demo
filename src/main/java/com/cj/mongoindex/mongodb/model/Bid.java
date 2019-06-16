@@ -27,8 +27,41 @@ public class Bid implements Serializable {
      */
     private Object content;
 
+    /**
+     * 网站
+     */
+    private String host;
+
+    /**
+     * 网站名称
+     */
+    private String hostname;
+
+    /**
+     * 地址
+     */
+    private String url;
+
+    /**
+     * 大类
+     */
+    @Field("big_cate")
+    private String bigCate;
+
+    /**
+     * 小类
+     */
+    @Field("small_cate")
+    private String smallCate;
+
+    /**
+     * 创建日期
+     */
     private String createdate;
 
+    /**
+     * 创建时间
+     */
     private String createtime;
 
     public Bid() {
@@ -80,6 +113,46 @@ public class Bid implements Serializable {
 
     public void setCreatetime(String cratetime) {
         this.createtime = cratetime;
+    }
+
+    public String getHost() {
+        return host;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
+    }
+
+    public String getHostname() {
+        return hostname;
+    }
+
+    public void setHostname(String hostname) {
+        this.hostname = hostname;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getBigCate() {
+        return bigCate;
+    }
+
+    public void setBigCate(String bigCate) {
+        this.bigCate = bigCate;
+    }
+
+    public String getSmallCate() {
+        return smallCate;
+    }
+
+    public void setSmallCate(String smallCate) {
+        this.smallCate = smallCate;
     }
 
     @Override
