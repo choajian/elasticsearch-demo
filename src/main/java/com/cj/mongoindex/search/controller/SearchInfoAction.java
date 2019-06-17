@@ -85,6 +85,7 @@ public class SearchInfoAction {
         //页面参数
         model.put("articleList", resPages.getContent()); //搜索结果集
         model.put("ResultPage", resultPage);
+        model.put("showCount", Integer.valueOf(advancedQuery.getStr_pagesize()));
         model.put("pageCount", resPages.getTotalElements());
         model.put("timeCon", String.valueOf(Math.round(endTime - startTime) / 1000.0));
         model.put("yearArray", CommUtil.currentYearArray());

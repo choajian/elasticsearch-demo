@@ -29,7 +29,7 @@ public interface ArticleSearchRepository extends ElasticsearchRepository<Article
      * Page<Article> findByContent(String content, Pageable pageable);
      *
      * @param content 文章内容
-     * @param page  分页偶爱徐
+     * @param page  分页
      * @return
      */
     Page<Article> findByContent(String content, Pageable page);

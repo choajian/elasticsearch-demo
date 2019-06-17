@@ -234,11 +234,31 @@
             </div>
         </div>
         <div class="g-rightmain f-fl">
+            <div class="u-search-input f-fl" style='width:335px;margin-left:25px'>
+                <div class="u-search-select f-pr" onMouseOver="mopen('dropCate3');"
+                     onMouseOut="mclosetime();">
+                    <h1 class="f-ib"><c:if test="${2 == advancedQuery.str_titileOrContent}">全文</c:if><c:if
+                            test="${2 != advancedQuery.str_titileOrContent}">标题</c:if></h1><span
+                        class="glyphicon glyphicon-chevron-up" onclick="mopen('dropCate3');"></span>
+                    <ul class="dropCate" id="dropCate3"
+                        style="visibility:hidden; position:absolute; top: -59px;">
+                        <li><a href="javascript:searchKeyWord(5, '1');">标题</a></li>
+                        <li><a href="javascript:searchKeyWord(5, '2');">全文</a></li>
+                    </ul>
+                </div>
+                <input type="text" size="36" style='width:255px;' class="inp" id="autocomplete"
+                       name='autocomplete' value='${advancedQuery.str_query }' maxlength="50"/>
+            </div>
+            <div class="u-search-btn f-fl">
+                <input type="button" id='searchBtn' onmousedown="this.className='u-search-btn-down'"
+                       onmouseout="this.className=''" value=" 搜 索 " onclick="searchKeyWord(1, '');"/>&nbsp;
+            </div>
             <div class="m-right-content">
                 <span class="m-result-note f-fl">
-					共为您找到 ${pageCount } 个结果<c:if test="${0 < pageCount }">，当前页面显示第 ${resultPage.currentResult+1 } -
-                    <c:if test="${pageCount > resultPage.currentResult+resultPage.showCount }">${resultPage.currentResult+resultPage.showCount }</c:if>
-                    <c:if test="${resultPage.currentResult+resultPage.showCount > pageCount }">${pageCount }</c:if> 项。
+					共为您找到 ${pageCount } 个结果
+                    <c:if test="${0 < pageCount }">，当前页面显示第 ${resultPage.currentResult+1 } -
+                    <c:if test="${pageCount > resultPage.currentResult+showCount }">${resultPage.currentResult+showCount }</c:if>
+                    <c:if test="${resultPage.currentResult+showCount > pageCount }">${pageCount }</c:if> 项。
                 </c:if>[用时: ${timeCon } 秒]
 				</span>
                 <c:choose>
@@ -246,9 +266,6 @@
                         <c:forEach items="${articleList}" var="article" varStatus="s">
                             <div class="m-result f-fl">
                                 <div class="u-result-title">
-                                    <c:if test="${not empty article.id}"><input type='checkbox' class="f-vam f-mt2"
-                                                                                name='proChk'
-                                                                                value='${article.id}'/></c:if>
                                     <c:if test="${empty article.id}">&nbsp;&nbsp;</c:if>
                                     <label>【${article.bigCate }】</label>
                                     <h1>
@@ -309,25 +326,6 @@
                                value='${advancedQuery.str_year }'/>
                         <input type='hidden' id='currentUserName' name='currentUserName' value='${currentUserName }'/>
                         <input type="hidden" id='dir' name="dir" value="login">
-                        <div class="u-search-input f-fl" style='width:335px;'>
-                            <div class="u-search-select f-pr" onMouseOver="mopen('dropCate3');"
-                                 onMouseOut="mclosetime();">
-                                <h1 class="f-ib"><c:if test="${2 == advancedQuery.str_titileOrContent}">全文</c:if><c:if
-                                        test="${2 != advancedQuery.str_titileOrContent}">标题</c:if></h1><span
-                                    class="glyphicon glyphicon-chevron-up" onclick="mopen('dropCate3');"></span>
-                                <ul class="dropCate" id="dropCate3"
-                                    style="visibility:hidden; position:absolute; top: -59px;">
-                                    <li><a href="javascript:searchKeyWord(5, '1');">标题</a></li>
-                                    <li><a href="javascript:searchKeyWord(5, '2');">全文</a></li>
-                                </ul>
-                            </div>
-                            <input type="text" size="36" style='width:255px;' class="inp" id="autocomplete"
-                                   name='autocomplete' value='${advancedQuery.str_query }' maxlength="50"/>
-                        </div>
-                        <div class="u-search-btn f-fl">
-                            <input type="button" id='searchBtn' onmousedown="this.className='u-search-btn-down'"
-                                   onmouseout="this.className=''" value=" 搜 索 " onclick="searchKeyWord(1, '');"/>&nbsp;
-                        </div>
                     </form>
                 </div>
             </div>
