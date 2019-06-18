@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 /**
  * @program: elasticsearch-demo
  * @description: 搜索功能
@@ -70,6 +72,9 @@ public class SearchInfoAction {
 
         //执行查询
         Page<Article> resPages = articleService.findByContent(advancedQuery.getStr_query(), pageable);
+
+//        String[] fields={"title","content"};
+//        Page<Article> resPages=articleService.highLigthQuery(fields,advancedQuery.getStr_query(), pageable);
 
 
         //分页数据

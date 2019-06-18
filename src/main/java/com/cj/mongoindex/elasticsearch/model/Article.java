@@ -1,6 +1,7 @@
 package com.cj.mongoindex.elasticsearch.model;
 
 import com.cj.mongoindex.mongodb.model.Bid;
+import com.cj.mongoindex.mongodb.utils.StringUtil;
 import com.cj.mongoindex.mongodb.utils.ZipUtils;
 import org.bson.types.Binary;
 import org.springframework.data.annotation.Id;
@@ -31,6 +32,11 @@ public class Article implements Serializable {
      */
     @Field(fielddata = true, type = FieldType.Text)
     private String content;
+
+    /**
+     * html标签版本
+     */
+    private String contentHtml;
 
     /**
      * 网站
@@ -76,6 +82,8 @@ public class Article implements Serializable {
     private String sourceSite;
 
     private String digest;
+
+    private String smallTitle;
 
     public Article() {
     }
@@ -208,6 +216,22 @@ public class Article implements Serializable {
         this.digest = digest;
     }
 
+    public String getContentHtml() {
+        return contentHtml;
+    }
+
+    public void setContentHtml(String contentHtml) {
+        this.contentHtml = contentHtml;
+    }
+
+    public String getSmallTitle() {
+        return StringUtil.subStringByByte(this.title,110)+"...";
+    }
+
+    public void setSmallTitle(String smallTitle) {
+        this.smallTitle = smallTitle;
+    }
+
     public static List<Article> toArticleList(List<Bid> bids) {
         Object o = null;
         String c = null;
@@ -228,7 +252,8 @@ public class Article implements Serializable {
                 } else if (o instanceof Binary) {
                     c = ZipUtils.uncompressToString(((Binary) o).getData());
                 }
-                article.setContent(c);
+                article.setContentHtml(c);
+                article.setContent(StringUtil.regexEscape(StringUtil.Html2Text(c)));
                 article.setHost(bid.getHost());
                 article.setHostName(bid.getHostname());
                 article.setBigCate(bid.getBigCate());

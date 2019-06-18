@@ -255,6 +255,13 @@ public class StringUtil {
 	 * @return
 	 */
 	public static String subStringByByte(String str, int len) {
+		//高亮拼接的前缀
+		String preTags="<font color=\"red\">";
+		//高亮拼接的后缀
+		String postTags="</font>";
+		int preNum=str.split(preTags).length-1;
+		int postNum=str.split(postTags).length-1;
+		len=len+preNum*18+postNum*7;
 		String result = null;
 		if (str != null) {
 			byte[] a = str.getBytes();

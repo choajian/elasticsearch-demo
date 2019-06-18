@@ -3,6 +3,7 @@ package com.cj.mongoindex.elasticsearch.service;
 import com.cj.mongoindex.elasticsearch.model.Article;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.elasticsearch.core.aggregation.AggregatedPage;
 import org.springframework.data.elasticsearch.core.query.SearchQuery;
 
 import java.util.List;
@@ -60,4 +61,12 @@ public interface ArticleService {
      * @return
      */
     List<Article> templateSearchQuery(SearchQuery searchQuery);
+
+    /**
+     * 高亮操作
+     * @param field
+     * @param searchMessage
+     * @return
+     */
+    Page highLigthQuery(String[] field, String searchMessage, Pageable pageable);
 }

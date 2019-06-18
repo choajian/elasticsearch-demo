@@ -277,7 +277,7 @@
                                             <a name='ann' href="${ctx }/search/toSnapshot?id=${article.id }"
                                                target="_blank">
                                                 </c:if>
-                                                    ${article.title}</a></h1></font>&nbsp;&nbsp;<i>${article.province }&nbsp;${article.area }</i>
+                                                    ${article.smallTitle}</a></h1></font>&nbsp;&nbsp;<i>${article.province }&nbsp;${article.area }</i>
                                 </div>
                                 <p class="u-result-description">
                                         ${article.digest }
